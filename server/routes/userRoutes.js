@@ -19,9 +19,15 @@ router.post("/register", async (req, res) => {
         const user = new User(req.body);
         await user.save();
         
-        return res.status(201).json('User Created');
+        return res.send({
+            success:true,
+            message:"User registered successfully"
+        })
     }catch(error){
-        return res.json(error);
+        return res.send({
+            success:false,
+            message:"Something went wrong"
+        });
     }
 
 });
@@ -47,6 +53,4 @@ router.post("/login", async (req, res) => {
     })
   
 });
-
-
 module.exports = router;

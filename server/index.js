@@ -18,9 +18,7 @@ app.use('/api/users' , userRoutes)
 
 const PORT = process.env.PORT || 8081
 
-
-
-
 app.listen(PORT , ()=>{
+    console.log(`Server is running on port http://localhost:${PORT}`)
     console.log("server running")
 })
